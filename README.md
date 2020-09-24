@@ -16,10 +16,10 @@ mvn clean install
 
 ```shell script
 mvn archetype:generate \
--DgroupId=com.jelly.test \
+-DgroupId=com.jelly.boot \
 -DartifactId=demo \
 -Dversion=1.0.0-SNAPSHOT \
 -DarchetypeGroupId=com.jelly \
 -DarchetypeArtifactId=scaffold \
--DarchetypeVersion=1.0 -X -DarchetypeCatalog=local \
+-DarchetypeVersion=1.0 -X -DarchetypeCatalog=local 
 ```
