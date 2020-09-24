@@ -10,8 +10,8 @@ mvn clean install
 
 ```shell script
 mvn archetype:generate \
--DgroupId=com.h2t.test \
--DartifactId=superman-demo \
+-DgroupId=com.jelly.test \
+-DartifactId=demo \
 -Dversion=1.0.0-SNAPSHOT \
 -DarchetypeGroupId=com.jelly \
 -DarchetypeArtifactId=scaffold \
