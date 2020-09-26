@@ -66,7 +66,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.OK)
     @ExceptionHandler(ServerException.class)
     public Result businessExceptionHandler(HttpServletRequest request, ServerException e) {
-        log.warn("Capture a business exception: {}. {}", request.getRequestURI(), e);
+        log.warn("Capture a business exception. uri: {}, msg: {}", request.getRequestURI(), e.getMessage(), e);
         return Result.error(e).build();
     }
 
@@ -81,12 +81,12 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.OK)
     @ExceptionHandler(value = Exception.class)
     public Result exceptionHandler(HttpServletRequest request, Exception e) {
-        log.warn("Capture a global exception: {}. {}", request.getRequestURI(), e);
+        log.warn("Capture a global exception. uri: {}, msg: {}", request.getRequestURI(), e.getMessage(), e);
         return Result.error(ErrorStatus.INTERNAL_EXCEPTION).build();
     }
 
     private Result filterErrorMsg(HttpServletRequest request, List<FieldError> fieldErrors, Exception e) {
-        log.warn("Capture a data check exception: {}. {}", request.getRequestURI(), e);
+        log.warn("Capture a data check exception. uri: {}, msg: {}", request.getRequestURI(), e.getMessage(), e);
         List<String> errorMsgList = new ArrayList<>();
         for (FieldError fieldError : fieldErrors) {
             errorMsgList.add(fieldError.getDefaultMessage());

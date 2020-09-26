@@ -6,7 +6,7 @@ import com.jelly.boot.error.ServerException;
 import java.text.MessageFormat;
 
 /**
- * 返回结果类
+ * 统一返回结果类
  * <p>
  * 使用方法：
  * 1. Result r = Result.createBuilder().build();
