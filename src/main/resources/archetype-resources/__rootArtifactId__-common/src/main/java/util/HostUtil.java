@@ -9,7 +9,7 @@ import java.net.UnknownHostException;
 import java.util.Enumeration;
 
 /**
- * 获取机器名称、机器IP
+ * 获取当前机器名称、机器IP
  *
  * @author zhangguodong
  */
