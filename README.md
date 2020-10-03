@@ -23,3 +23,12 @@ mvn archetype:generate \
 -DarchetypeArtifactId=scaffold \
 -DarchetypeVersion=1.0 -X -DarchetypeCatalog=local 
 ```
+
+# 功能点
+
+- 业界较为流行的模块划分
+- 封装完善的出参、入参包装（可以开启和关闭）
+- 统一异常捕获、自定义系统异常
+- 分布式id生成器，雪花id生成器
+- 时间工具类、本地host工具类、IP工具类、正则表达式工具类
+
