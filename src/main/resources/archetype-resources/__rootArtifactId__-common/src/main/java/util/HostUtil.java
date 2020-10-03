@@ -1,4 +1,4 @@
-package com.jelly.boot.util;
+package ${groupId}.util;
 
 import java.net.Inet6Address;
 import java.net.InetAddress;

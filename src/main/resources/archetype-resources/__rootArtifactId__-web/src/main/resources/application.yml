@@ -6,3 +6,5 @@ spring:
     url: jdbc:mysql://10.9.198.84:3306/iot?characterEncoding=utf-8&connectTimeout=2000&socketTimeout=2000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
     username: root
     password: 123456
+  application:
+    name: ${artifactId}

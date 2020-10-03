@@ -17,6 +17,9 @@
         <requiredProperty key="package">
             <defaultValue>${groupId}</defaultValue>
         </requiredProperty>
+        <requiredProperty key="dollar">
+            <defaultValue>$</defaultValue>
+        </requiredProperty>
     </requiredProperties>
 
     <!--子模块-->
@@ -36,13 +39,13 @@
                     </includes>
                 </fileSet>
                 <fileSet encoding="UTF-8">
-                    <directory>src/main/resources</directory>
+                    <directory>src/test/resources</directory>
                     <includes>
                         <include>**/*.*</include>
                     </includes>
                 </fileSet>
                 <fileSet encoding="UTF-8">
-                    <directory>src/test/resources</directory>
+                    <directory>src/main/resources</directory>
                     <includes>
                         <include>**/*.*</include>
                     </includes>
@@ -57,14 +60,9 @@
                         <include>**/*.*</include>
                     </includes>
                 </fileSet>
+
                 <fileSet filtered="true" encoding="UTF-8" packaged="true">
                     <directory>src/test/java</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" encoding="UTF-8">
-                    <directory>src/main/resources</directory>
                     <includes>
                         <include>**/*.*</include>
                     </includes>
@@ -85,17 +83,11 @@
                         <include>**/*.*</include>
                     </includes>
                 </fileSet>
+
                 <fileSet filtered="true" encoding="UTF-8" packaged="true">
                     <directory>src/test/java</directory>
                     <includes>
                         <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" encoding="UTF-8">
-                    <directory>src/main/resources</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                        <include>mapper</include>
                     </includes>
                 </fileSet>
                 <fileSet encoding="UTF-8">
@@ -114,14 +106,9 @@
                         <include>**/*.*</include>
                     </includes>
                 </fileSet>
+
                 <fileSet filtered="true" encoding="UTF-8" packaged="true">
                     <directory>src/test/java</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" encoding="UTF-8">
-                    <directory>src/main/resources</directory>
                     <includes>
                         <include>**/*.*</include>
                     </includes>

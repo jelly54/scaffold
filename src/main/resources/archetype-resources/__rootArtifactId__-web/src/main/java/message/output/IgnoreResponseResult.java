@@ -1,4 +1,4 @@
-package com.jelly.boot.message.output;
+package ${groupId}.message.output;
 
 import org.springframework.web.bind.annotation.ResponseBody;
 

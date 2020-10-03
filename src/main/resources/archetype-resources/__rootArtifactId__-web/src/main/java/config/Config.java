@@ -1,12 +1,9 @@
-package com.jelly.boot.config;
+package ${groupId}.config;
 
-import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig;
-import com.fasterxml.jackson.databind.deser.BeanDeserializerFactory;
-import com.fasterxml.jackson.databind.deser.DefaultDeserializationContext;
-import com.fasterxml.jackson.databind.deser.DeserializerFactory;
-import com.fasterxml.jackson.databind.deser.Deserializers;
-import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.jelly.boot.message.input.Jackson2HttpMessageConverter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
@@ -14,15 +11,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 
-import java.util.Date;
-
 /**
  * @author ：zhang guo dong
  */
 @Configuration
-public class ServerConfig {
+public class Config {
 
-    @Value("${request.body.params.enable:true}")
+    @Value("${dollar}{request.body.params.enable:true}")
     private boolean isRequestInput;
 
     /**

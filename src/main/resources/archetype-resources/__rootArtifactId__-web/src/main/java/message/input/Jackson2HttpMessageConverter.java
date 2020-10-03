@@ -1,4 +1,4 @@
-package com.jelly.boot.message.input;
+package ${groupId}.message.input;
 
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;

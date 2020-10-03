@@ -1,4 +1,4 @@
-package com.jelly.boot.id;
+package ${groupId}.id;
 
 /**
  * 分布式ID生成器：

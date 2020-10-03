@@ -1,4 +1,4 @@
-package com.jelly.boot.request;
+package ${groupId}.request;
 
 
 import javax.validation.constraints.NotNull;

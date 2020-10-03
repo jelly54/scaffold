@@ -1,7 +1,7 @@
-package com.jelly.boot.message.output;
+package ${groupId}.message.output;
 
-import com.jelly.boot.error.ErrorStatus;
-import com.jelly.boot.error.ServerException;
+import ${groupId}.error.ErrorStatus;
+import ${groupId}.error.ServerException;
 
 import java.text.MessageFormat;
 

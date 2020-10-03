@@ -1,4 +1,4 @@
-package com.jelly.boot.id;
+package ${groupId}.id;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package com.jelly.boot.error;
+package ${groupId}.error;
 
 import java.text.MessageFormat;
 

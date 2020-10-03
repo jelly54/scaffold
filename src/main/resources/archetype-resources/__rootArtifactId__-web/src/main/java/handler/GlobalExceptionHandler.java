@@ -1,8 +1,8 @@
-package com.jelly.boot.handler;
+package ${groupId}.handler;
 
-import com.jelly.boot.message.output.Result;
-import com.jelly.boot.error.ErrorStatus;
-import com.jelly.boot.error.ServerException;
+import ${groupId}.message.output.Result;
+import ${groupId}.error.ErrorStatus;
+import ${groupId}.error.ServerException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

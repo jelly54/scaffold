@@ -1,10 +1,10 @@
-package com.jelly.boot.controller;
+package ${groupId}.controller;
 
-import com.jelly.boot.error.ServerException;
-import com.jelly.boot.message.input.IgnoreRequestInput;
-import com.jelly.boot.message.output.IgnoreResponseResult;
-import com.jelly.boot.message.output.Result;
-import com.jelly.boot.request.DemoRequest;
+import ${groupId}.error.ServerException;
+import ${groupId}.message.input.IgnoreRequestInput;
+import ${groupId}.message.output.IgnoreResponseResult;
+import ${groupId}.message.output.Result;
+import ${groupId}.request.DemoRequest;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

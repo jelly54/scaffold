@@ -1,4 +1,4 @@
-package com.jelly.boot.util;
+package ${groupId}.util;
 
 import java.util.ArrayList;
 import java.util.List;
