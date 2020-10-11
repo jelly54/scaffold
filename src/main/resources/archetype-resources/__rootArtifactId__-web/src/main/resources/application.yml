@@ -1,6 +1,9 @@
 server:
   port: 9980
 
+swagger:
+  open: true
+
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/test?characterEncoding=utf-8&connectTimeout=2000&socketTimeout=2000&zeroDateTimeBehavior=convertToNull

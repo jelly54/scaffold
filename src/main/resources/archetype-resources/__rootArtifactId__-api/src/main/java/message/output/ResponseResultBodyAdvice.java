@@ -23,6 +23,13 @@ public class ResponseResultBodyAdvice implements ResponseBodyAdvice<Object> {
     private static final Logger log = LoggerFactory.getLogger(ResponseResultBodyAdvice.class);
 
     private static final Class<? extends Annotation> IGNORE_ANNOTATION_TYPE = IgnoreResponseResult.class;
+    /**
+     * 需要忽略的地址
+     */
+    private static String[] ignores = new String[]{
+            "/swagger-resources",
+            "/v2/api-docs"
+    };
 
     /**
      * 判断类或者方法是否使用了 @ResponseResultBody
@@ -39,6 +46,10 @@ public class ResponseResultBodyAdvice implements ResponseBodyAdvice<Object> {
     public Object beforeBodyWrite(Object div, MethodParameter returnType, MediaType selectedContentType,
                                   Class<? extends HttpMessageConverter<?>> selectedConverterType,
                                   ServerHttpRequest request, ServerHttpResponse response) {
+        if (this.ignore(request.getURI().toString())) {
+            return div;
+        }
+
         // 添加忽略返回result的注解
         if (AnnotatedElementUtils.hasAnnotation(returnType.getContainingClass(), IGNORE_ANNOTATION_TYPE) ||
                 returnType.hasMethodAnnotation(IGNORE_ANNOTATION_TYPE)) {
@@ -53,4 +64,15 @@ public class ResponseResultBodyAdvice implements ResponseBodyAdvice<Object> {
         return Result.ok(div).build();
     }
 
+    /**
+     * 判断url是否需要拦截
+     */
+    private boolean ignore(String uri) {
+        for (String string : ignores) {
+            if (uri.contains(string)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
