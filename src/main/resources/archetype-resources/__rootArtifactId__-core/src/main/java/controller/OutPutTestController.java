@@ -17,7 +17,7 @@ import java.util.HashMap;
  * @author ：zhang guo dong
  */
 @RestController
-public class DemoController {
+public class OutPutTestController {
     private static final HashMap<String, Object> INFO;
 
     static {
