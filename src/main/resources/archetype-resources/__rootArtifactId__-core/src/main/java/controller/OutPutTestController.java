@@ -5,6 +5,8 @@ import ${groupId}.message.input.IgnoreRequestInput;
 import ${groupId}.message.output.IgnoreResponseResult;
 import ${groupId}.message.output.Result;
 import ${groupId}.request.DemoRequest;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
