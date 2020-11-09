@@ -1,4 +1,4 @@
-package com.jelly.message.input;
+package ${groupId}.message.input;
 
 /**
  * 统一入参格式

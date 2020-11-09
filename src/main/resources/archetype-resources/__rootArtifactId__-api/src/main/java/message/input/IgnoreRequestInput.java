@@ -1,4 +1,4 @@
-package com.jelly.message.input;
+package ${groupId}.message.input;
 
 import org.springframework.web.bind.annotation.ResponseBody;
 
