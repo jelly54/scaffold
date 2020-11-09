@@ -27,7 +27,7 @@ public class LoggerAspect {
 
     private static Logger log = LoggerFactory.getLogger(LoggerAspect.class);
 
-    @Pointcut("execution(* ${groupId}.controller.*.*(..))")
+    @Pointcut("execution(* com.jelly.boot.controller.*.*(..))")
     private void controllerPointCut() {
     }
 
@@ -60,10 +60,5 @@ public class LoggerAspect {
         log.info("requestId: {}, end time: {}, cost:{}ms", uuid, end, end - start);
 
         return retVal;
-    }
-
-    @AfterThrowing(pointcut = "controllerPointCut()", throwing = "ex")
-    public void doAfterThrowing(Exception ex) {
-        log.error("error.", ex);
     }
 }

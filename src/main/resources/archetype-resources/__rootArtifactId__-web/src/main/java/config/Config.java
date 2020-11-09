@@ -18,7 +18,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 public class Config {
 
     @Value("${dollar}{request.body.params.enable:true}")
-    private boolean isRequestInput;
+    private boolean paramsEnable;
 
     /**
      * 注册message-converter
@@ -32,7 +32,7 @@ public class Config {
         objectMapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
         objectMapper.enable(DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_AS_NULL);
 
-        MappingJackson2HttpMessageConverter converter = new Jackson2HttpMessageConverter(isRequestInput, objectMapper);
+        MappingJackson2HttpMessageConverter converter = new Jackson2HttpMessageConverter(paramsEnable, objectMapper);
         return new HttpMessageConverters(converter);
     }
 }

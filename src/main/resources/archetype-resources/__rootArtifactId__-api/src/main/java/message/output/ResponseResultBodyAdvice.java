@@ -2,6 +2,7 @@ package ${groupId}.message.output;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.http.MediaType;
@@ -21,8 +22,11 @@ import java.lang.annotation.Annotation;
 @RestControllerAdvice
 public class ResponseResultBodyAdvice implements ResponseBodyAdvice<Object> {
     private static final Logger log = LoggerFactory.getLogger(ResponseResultBodyAdvice.class);
-
     private static final Class<? extends Annotation> IGNORE_ANNOTATION_TYPE = IgnoreResponseResult.class;
+
+    @Value("${dollar}{response.body.result.enable:true}")
+    private boolean resultEnable;
+
     /**
      * 需要忽略的地址
      */
@@ -36,7 +40,7 @@ public class ResponseResultBodyAdvice implements ResponseBodyAdvice<Object> {
      */
     @Override
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
-        return true;
+        return resultEnable;
     }
 
     /**

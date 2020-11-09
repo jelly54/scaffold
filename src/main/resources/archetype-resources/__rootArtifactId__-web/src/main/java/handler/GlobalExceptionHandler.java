@@ -93,5 +93,4 @@ public class GlobalExceptionHandler {
         }
         return Result.error(ErrorStatus.ILLEGAL_DATA, errorMsgList.toArray()).build();
     }
-
 }

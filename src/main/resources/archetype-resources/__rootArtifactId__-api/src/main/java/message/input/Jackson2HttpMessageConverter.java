@@ -22,11 +22,11 @@ public class Jackson2HttpMessageConverter extends MappingJackson2HttpMessageConv
 
     private static final Class<? extends Annotation> IGNORE_ANNOTATION_TYPE = IgnoreRequestInput.class;
 
-    private boolean isRequestInput;
+    private boolean paramsEnable;
 
-    public Jackson2HttpMessageConverter(boolean isRequestInput, ObjectMapper objectMapper) {
+    public Jackson2HttpMessageConverter(boolean paramsEnable, ObjectMapper objectMapper) {
         super(objectMapper);
-        this.isRequestInput = isRequestInput;
+        this.paramsEnable = paramsEnable;
     }
 
     @Override
@@ -41,11 +41,11 @@ public class Jackson2HttpMessageConverter extends MappingJackson2HttpMessageConv
         }
 
         // 需要跳过
-        if (aClass.isAnnotationPresent(IGNORE_ANNOTATION_TYPE) || aClass.isAnnotationPresent(IGNORE_ANNOTATION_TYPE)) {
+        if (aClass.isAnnotationPresent(IGNORE_ANNOTATION_TYPE)) {
             return super.read(type, aClass, inputMessage);
         }
 
-        if (isRequestInput) {
+        if (paramsEnable) {
             JavaType javaType = TypeFactory.defaultInstance().constructParametricType(Input.class,
                     TypeFactory.defaultInstance().constructType(type));
 

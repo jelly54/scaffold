@@ -1,7 +1,7 @@
 package ${groupId}.controller;
 
+import ${groupId}.error.ErrorStatus;
 import ${groupId}.error.ServerException;
-import ${groupId}.message.input.IgnoreRequestInput;
 import ${groupId}.message.output.IgnoreResponseResult;
 import ${groupId}.message.output.Result;
 import ${groupId}.request.DemoRequest;
@@ -44,10 +44,9 @@ public class OutPutTestController {
     }
 
     @ApiOperation("返回HashMap，使用注解不对出入参封装")
-    @IgnoreRequestInput
     @IgnoreResponseResult
-    @GetMapping("hello1")
-    public HashMap<String, Object> hello1() {
+    @PostMapping("bind-non-result")
+    public HashMap<String, Object> hello1(@RequestBody @Validated DemoRequest request) {
         return INFO;
     }
 
@@ -66,6 +65,6 @@ public class OutPutTestController {
     @ApiOperation("统一异常捕获，自定义异常ServerException")
     @GetMapping("helloMyError")
     public HashMap<String, Object> helloMyError() throws Exception {
-        throw new ServerException();
+        throw new ServerException(ErrorStatus.ILLEGAL_ACCESS);
     }
 }
